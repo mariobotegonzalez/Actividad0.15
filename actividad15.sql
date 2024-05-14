@@ -19,3 +19,5 @@ DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_add_clientes`(IN `v_nombre` VARCHAR(50), IN `v_ciudad` VARCHAR(50), IN `v_facturacion` DECIMAL(8,2))
 INSERT INTO `clientes` (`id`, `nombre`, `ciudad`, `facturacion`) VALUES (NULL, v_nombre, v_ciudad, v_facturacion)$$
 DELIMITER ;
+-- execute y call 
+SET @p0='maria'; SET @p1='valencia'; SET @p2='1700'; CALL `sp_add_clientes`(@p0, @p1, @p2);
